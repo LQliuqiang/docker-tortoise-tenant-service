@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://172.17.0.1:3306/tortoise-tenant-st?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://172.17.0.1:3306/tortoise-tenant?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
   redis:
@@ -36,6 +36,8 @@ mybatis:
 auth-args:
   secret-token-key: auth2090
   secret-password-key: authTenant2090
+  token-des-mode: python
+  pwd-des-mode: SecureRandom
   token-invalid-time: 4200
   split-symbol: Symbol
   file-path: /opt/tortoiseFile
