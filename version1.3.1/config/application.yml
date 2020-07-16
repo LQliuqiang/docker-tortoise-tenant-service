@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://172.17.0.1:3306/tortoise-tenant-st?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 172.17.0.1
+    port: 6379
+    database: 0
+    timeout: 3000
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 50
+        max-active: 150
+    password: 123456
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      enabled: true
+      location:
+      max-file-size: 2MB
+      max-request-size: 4MB
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+auth-args:
+  secret-token-key: auth2090
+  secret-password-key: authTenant2090
+  token-des-mode: python
+  pwd-des-mode: SecureRandom
+  token-invalid-time: 4200
+  split-symbol: Symbol
+  file-path: /opt/tortoiseFile
+
+server:
+  port: 8088
+  servlet:
+    context-path: /tortoise
